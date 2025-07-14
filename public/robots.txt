@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shiningwarren.github.io/PropertyAI/sitemap.xml 
