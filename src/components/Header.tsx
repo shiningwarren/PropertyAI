@@ -9,7 +9,6 @@ export function Header() {
     { label: "Features", href: "#features" },
     { label: "Services", href: "#services" },
     { label: "AI Demo", href: "#demo" },
-    { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" }
   ];
 
