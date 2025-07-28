@@ -32,7 +32,7 @@ A modern AI-powered platform for property investors, landlords, and developers.
 
 ## Deployment
 - For custom domains (e.g., www.propertyai.club), set `base: '/'` in `vite.config.ts` before building.
-- Deploy the contents of the `dist/` folder to your hosting provider (Vercel, Netlify, etc.).
+- Deploy the contents of the `dist/` folder to your hosting provider (Vercel, Netlify, etc.)...
 
 ## Project Structure
 - `src/` – Main source code (components, styles, entry point)
