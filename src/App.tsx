@@ -4,7 +4,6 @@ import { Features } from "./components/Features";
 import { Services } from "./components/Services";
 import { AIChatDemo } from "./components/AIChatDemo";
 import { Footer } from "./components/Footer";
-import { SectionHeading } from "./components/ui/section-heading";
 import { ContactForm } from "./components/ContactForm";
 
 export default function App() {

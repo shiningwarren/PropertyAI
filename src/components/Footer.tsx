@@ -1,4 +1,4 @@
-import { Bot, Mail, Phone, MapPin, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Bot, Mail, MapPin, Twitter, Linkedin, Facebook } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Footer() {

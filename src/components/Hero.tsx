@@ -11,27 +11,27 @@ export function Hero() {
             <span className="text-sm text-gray-800">AI-Powered Property Intelligence</span>
           </div>
           
-          <h1 className="mb-6 text-4xl lg:text-6xl tracking-tight">
-            Smart Property Strategies with{" "}
-            <span className="text-primary">AI Guidance</span>
+          <h1 className="mb-8 sm:mb-10 text-4xl lg:text-6xl tracking-tight">
+            Smart Property Strategies<br />
+            with <span className="text-primary mt-4 inline-block">AI Guidance</span>
           </h1>
           
-          <p className="mb-8 text-lg lg:text-xl text-gray-500 max-w-2xl mx-auto">
+          <p className="mb-16 sm:mb-8 text-lg lg:text-xl text-gray-500 max-w-2xl mx-auto">
             Get instant, personalized property investment strategies and market insights from our advanced AI agent. Make informed decisions with real-time data and expert analysis.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white font-medium px-4 py-2 rounded-lg">
+            <Button size="lg" className="w-auto inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white font-medium px-2 sm:px-4 py-2 rounded-lg">
               Start Your Property Journey
               <ArrowRight className="w-4 h-4" />
             </Button>
-            <Button size="lg" className="inline-flex items-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50">
+            <Button size="lg" className="w-auto inline-flex items-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-2 sm:px-4 py-2">
               <Home className="w-4 h-4" />
               View Live Demo
             </Button>
           </div>
           
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="mt-24 sm:mt-16 grid grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-2xl mb-2">10K+</div>
               <div className="text-sm text-gray-500">Properties Analyzed</div>
