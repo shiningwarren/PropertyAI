@@ -56,16 +56,26 @@ export function Footer() {
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>hello@propertyai.com</span>
+                <a 
+                  href="mailto:hello@propertyai.club" 
+                  className="hover:text-white transition-colors"
+                >
+                  hello@propertyai.club
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span>123 Tech Street, Innovation City</span>
+                <span>London, UK</span>
               </div>
             </div>
-            <Button className="mt-4 bg-white hover:bg-gray-200 text-black border-white">
-              Schedule Consultation
-            </Button>
+                         <a 
+               href="mailto:hello@propertyai.club?subject=Become a Property AI Partner&body=I want to enquire about having my business or services listed within Property AIs tech stack."
+               className="inline-block"
+             >
+               <Button className="mt-4 bg-white hover:bg-gray-200 text-black border-white">
+                 Become a Partner
+               </Button>
+             </a>
           </div>
         </div>
         

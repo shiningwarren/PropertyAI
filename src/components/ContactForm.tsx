@@ -1,18 +1,63 @@
+import { useState } from "react";
 import { SectionHeading } from "./ui/section-heading";
 
 export function ContactForm() {
+  // ✅ Track loading + message states
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+
+  // ✅ Handle form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get("name");
+    const email = formData.get("email");
+
+    try {
+      const res = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+
+      if (res.ok) {
+        setMessage("✅ Thank you! Your details have been submitted.");
+        form.reset();
+      } else {
+        const err = await res.text();
+        setMessage("❌ Something went wrong: " + err);
+      }
+    } catch (error) {
+      console.error("❌ Network error:", error);
+      setMessage("❌ Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <SectionHeading>Welcome to the Future of UK Property Advice</SectionHeading>
+          <SectionHeading>The Future of UK Property Advice</SectionHeading>
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
             Be the first to experience AI-powered property support that speaks your language - register your interest and stay one step ahead.
           </p>
         </div>
-        <form className="space-y-4 max-w-xl mx-auto">
+
+        {/* ✅ Updated form with onSubmit */}
+        <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto">
           <div>
-            <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <label
+              htmlFor="contact-name"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Name
+            </label>
             <input
               id="contact-name"
               name="name"
@@ -22,8 +67,14 @@ export function ContactForm() {
               placeholder="Your Name"
             />
           </div>
+
           <div>
-            <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label
+              htmlFor="contact-email"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Email
+            </label>
             <input
               id="contact-email"
               name="email"
@@ -33,14 +84,23 @@ export function ContactForm() {
               placeholder="you@email.com"
             />
           </div>
+
           <button
             type="submit"
-            className="w-full bg-black text-white font-medium py-2 px-4 rounded-md hover:bg-gray-800 transition-colors"
+            disabled={loading}
+            className="w-full bg-black text-white font-medium py-2 px-4 rounded-md hover:bg-gray-800 transition-colors disabled:opacity-50"
           >
-            Submit
+            {loading ? "Submitting..." : "Submit"}
           </button>
         </form>
+
+        {/* ✅ Show success or error message */}
+        {message && (
+          <p className="text-center mt-4 text-lg">
+            {message}
+          </p>
+        )}
       </div>
     </section>
   );
-} 
+}
