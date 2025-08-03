@@ -2,11 +2,10 @@ import { useState } from "react";
 import { SectionHeading } from "./ui/section-heading";
 
 export function ContactForm() {
-  // ✅ Track loading + message states
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
-  // ✅ Handle form submission
+  // ✅ Handle Netlify Forms submission (no serverless function needed)
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -14,22 +13,19 @@ export function ContactForm() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const name = formData.get("name");
-    const email = formData.get("email");
 
     try {
-      const res = await fetch("/.netlify/functions/contact", {
+      // ✅ Submit the form data directly to Netlify
+      const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
+        body: formData,
       });
 
       if (res.ok) {
         setMessage("✅ Thank you! Your details have been submitted.");
         form.reset();
       } else {
-        const err = await res.text();
-        setMessage("❌ Something went wrong: " + err);
+        setMessage("❌ Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("❌ Network error:", error);
@@ -49,8 +45,25 @@ export function ContactForm() {
           </p>
         </div>
 
-        {/* ✅ Updated form with onSubmit */}
-        <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto">
+        {/* ✅ Netlify-enabled form */}
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+          className="space-y-4 max-w-xl mx-auto"
+        >
+          {/* Required hidden input for Netlify */}
+          <input type="hidden" name="form-name" value="contact" />
+
+          {/* Hidden honeypot field for spam prevention */}
+          <p className="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
+
           <div>
             <label
               htmlFor="contact-name"
