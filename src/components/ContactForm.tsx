@@ -5,7 +5,7 @@ export function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
-  // ✅ Handle Netlify Forms submission (no serverless function needed)
+  // ✅ Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -14,18 +14,25 @@ export function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    // ✅ Convert to JSON so the serverless function can read it
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+    };
+
     try {
-      // ✅ Submit the form data directly to Netlify
       const res = await fetch("/.netlify/functions/contact", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       if (res.ok) {
         setMessage("✅ Thank you! Your details have been submitted.");
         form.reset();
       } else {
-        setMessage("❌ Something went wrong. Please try again.");
+        const err = await res.text();
+        setMessage("❌ Something went wrong: " + err);
       }
     } catch (error) {
       console.error("❌ Network error:", error);
@@ -45,25 +52,10 @@ export function ContactForm() {
           </p>
         </div>
 
-        {/* ✅ Netlify-enabled form */}
         <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
           className="space-y-4 max-w-xl mx-auto"
         >
-          {/* Required hidden input for Netlify */}
-          <input type="hidden" name="form-name" value="contact" />
-
-          {/* Hidden honeypot field for spam prevention */}
-          <p className="hidden">
-            <label>
-              Don’t fill this out if you’re human: <input name="bot-field" />
-            </label>
-          </p>
-
           <div>
             <label
               htmlFor="contact-name"
@@ -107,7 +99,6 @@ export function ContactForm() {
           </button>
         </form>
 
-        {/* ✅ Show success or error message */}
         {message && (
           <p className="text-center mt-4 text-lg">
             {message}
