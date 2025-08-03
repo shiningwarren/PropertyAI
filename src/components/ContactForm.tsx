@@ -16,7 +16,7 @@ export function ContactForm() {
 
     try {
       // ✅ Submit the form data directly to Netlify
-      const res = await fetch("/", {
+      const res = await fetch("/.netlify/functions/contact", {
         method: "POST",
         body: formData,
       });
