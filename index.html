@@ -36,5 +36,11 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- ✅ Hidden dummy form for Netlify detection -->
+    <form name="contact" netlify hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+    </form>
   </body>
-</html> 
+</html>
