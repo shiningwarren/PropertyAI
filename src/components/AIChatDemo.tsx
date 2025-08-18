@@ -17,18 +17,35 @@ export function AIChatDemo() {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   const sampleQuestions = [
-    "What's the best area to invest in for rental properties?",
-    "How much should I budget for my first home?",
-    "What are the current market trends in my area?",
-    "Should I buy or rent in today's market?"
+    "What are the required compliance registrations for setting up a property business in the UK?",
+    "What are the key factors to consider when choosing a property investment location?",
+    "How much deposit do I need for a buy-to-let mortgage?",
+    "Is it advisable to charge interest on a director's loan to a limited company?",
+    "What are the benefits of contract pricing for landlords purchasing refurbishment materials?"
   ];
 
   const handleSampleQuestion = (question: string) => {
+    let answer = "";
+    
+    if (question.includes("compliance registrations")) {
+      answer = "Register a Limited Company, join a redress scheme (PRS), register with ICO, sign up with HMRC for AML supervision, and obtain Professional Indemnity Insurance.";
+    } else if (question.includes("location")) {
+      answer = "Key factors: transport links, employment opportunities, local amenities, school catchment areas, planned infrastructure, rental demand, property price growth trends, and local authority development plans. Research the area's economic indicators and future prospects.";
+    } else if (question.includes("deposit")) {
+      answer = "Most buy-to-let mortgages require 25-40% deposit. Higher deposits (30%+) get better interest rates. Consider additional costs: stamp duty, legal fees, survey costs, and potential refurbishment expenses.";
+    } else if (question.includes("director's loan")) {
+      answer = "While legal, interest charged on director loans is taxable as personal income. It's more tax-efficient for basic rate taxpayers; higher-rate payers may find it counterproductive.";
+    } else if (question.includes("contract pricing")) {
+      answer = "Landlords accessing LNPG benefit from contract pricing, which is typically reserved for large institutions like housing associations. This pricing tier is lower than both retail and standard trade rates. LNPG aggregates landlord purchases to secure these rates directly from manufacturers, offering cost savings on key items like boilers, kitchens, and paint.";
+    } else {
+      answer = "Great question! Based on current market data and your profile, here's my analysis: I recommend looking at emerging suburbs with good transport links and planned infrastructure developments.";
+    }
+    
     setMessages(prev => [...prev, 
       { role: "user", content: question },
       { 
         role: "assistant", 
-        content: `Great question! Based on current market data and your profile, here's my analysis: ${question.includes('invest') ? 'I recommend looking at emerging suburbs with good transport links and planned infrastructure developments. The average ROI in these areas is currently 8-12% annually.' : question.includes('budget') ? 'For a first home, I typically recommend budgeting 20% above your target price to account for additional costs like inspections, legal fees, and moving expenses.' : question.includes('trends') ? 'Current market trends show a 3.2% increase in property values this quarter, with strong demand in the $400k-600k range. Interest rates are stabilizing, making it a good time for qualified buyers.' : 'In the current market, buying can be advantageous if you plan to stay for 5+ years and have stable income. Renting offers more flexibility but no equity building. Let me analyze your specific situation.'}`
+        content: answer
       }
     ]);
     
