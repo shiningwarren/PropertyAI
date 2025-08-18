@@ -1,24 +1,26 @@
-import { Bot, Mail, MapPin, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Bot, Mail, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-black text-white py-16">
+    <footer id="footer" className="bg-black text-white py-16">
       <div className="w-full px-20 lg:px-28">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-8">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 mb-8">
+          <div className="space-y-4 pr-3 md:pr-6 order-1 md:order-1 lg:order-1">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
                 <Bot className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-semibold">PropertyAI</span>
             </div>
-            <p className="text-gray-300 text-sm">
-              Empowering smart property decisions with AI-driven insights and strategies. Your trusted partner in real estate success.
+            <p className="text-gray-300 text-sm leading-relaxed max-w-[36ch] md:max-w-[48ch]">
+              Empowering smart property decisions with AI‑driven insights and strategies. Your trusted partner in property success.
             </p>
             <div className="flex gap-2">
-              <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white">
-                <Twitter className="w-4 h-4" />
+              <Button asChild variant="ghost" size="icon" className="text-gray-300 hover:text-white">
+                <a href="https://www.instagram.com/property.ai_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Instagram className="w-4 h-4" />
+                </a>
               </Button>
               <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white">
                 <Linkedin className="w-4 h-4" />
@@ -29,7 +31,7 @@ export function Footer() {
             </div>
           </div>
           
-          <div>
+          <div className="order-3 md:order-3 lg:order-2">
             <h4 className="mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li><a href="#" className="hover:text-white transition-colors">First-Time Buyers</a></li>
@@ -40,7 +42,7 @@ export function Footer() {
             </ul>
           </div>
           
-          <div>
+          <div className="order-4 md:order-4 lg:order-3 md:ml-24">
             <h4 className="mb-4">Resources</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li><a href="#" className="hover:text-white transition-colors">Property Calculator</a></li>
@@ -51,7 +53,7 @@ export function Footer() {
             </ul>
           </div>
           
-          <div>
+          <div className="order-2 md:order-2 lg:order-4 md:ml-24">
             <h4 className="mb-4">Contact</h4>
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center gap-2">
@@ -67,15 +69,15 @@ export function Footer() {
                 <MapPin className="w-4 h-4" />
                 <span>London, UK</span>
               </div>
+              <Button
+                asChild
+                className="mt-4 bg-white hover:bg-gray-200 text-black border-white"
+              >
+                <a href="mailto:hello@propertyai.club?subject=Become a Property AI Partner&body=I want to enquire about having my business or services listed within Property AIs tech stack.">
+                  Become a Partner
+                </a>
+              </Button>
             </div>
-                         <a 
-               href="mailto:hello@propertyai.club?subject=Become a Property AI Partner&body=I want to enquire about having my business or services listed within Property AIs tech stack."
-               className="inline-block"
-             >
-               <Button className="mt-4 bg-white hover:bg-gray-200 text-black border-white">
-                 Become a Partner
-               </Button>
-             </a>
           </div>
         </div>
         

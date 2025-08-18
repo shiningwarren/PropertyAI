@@ -9,7 +9,7 @@ export function Header() {
     { label: "Features", href: "#features" },
     { label: "Services", href: "#services" },
     { label: "AI Demo", href: "#demo" },
-    { label: "Contact", href: "#contact" }
+    { label: "Waitlist", href: "#waitlist" }
   ];
 
   return (
@@ -36,10 +36,9 @@ export function Header() {
           </nav>
           {/* Right section: Get Started + Burger */}
           <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0 ml-auto">
-            <Button variant="ghost" className="hidden md:inline-flex">
-              Sign In
+            <Button asChild className="bg-black hover:bg-gray-800 text-white font-medium px-4 py-2 rounded-lg">
+              <a href="#waitlist">Join Waitlist</a>
             </Button>
-            <Button className="bg-black hover:bg-gray-800 text-white font-medium px-4 py-2 rounded-lg">Get Started</Button>
             <Button
               variant="ghost"
               size="icon"
@@ -64,9 +63,6 @@ export function Header() {
                   {item.label}
                 </a>
               ))}
-              <Button variant="ghost" className="justify-start p-0">
-                Sign In
-              </Button>
             </nav>
           </div>
         )}

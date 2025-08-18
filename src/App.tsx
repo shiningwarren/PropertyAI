@@ -3,8 +3,8 @@ import { Hero } from "./components/Hero";
 import { Features } from "./components/Features";
 import { Services } from "./components/Services";
 import { AIChatDemo } from "./components/AIChatDemo";
-import { Footer } from "./components/Footer";
-import { ContactForm } from "./components/ContactForm";
+import { FooterSimple } from "./components/FooterSimple";
+import { WaitlistForm } from "./components/WaitlistForm";
 
 export default function App() {
   return (
@@ -21,9 +21,9 @@ export default function App() {
         <section id="demo">
           <AIChatDemo />
         </section>
-        <ContactForm />
+        <WaitlistForm />
       </main>
-      <Footer />
+      <FooterSimple />
     </div>
   );
 }

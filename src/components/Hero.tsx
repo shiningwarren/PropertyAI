@@ -21,13 +21,17 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="w-auto inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white font-medium px-2 sm:px-4 py-2 rounded-lg">
-              Start Your Property Journey
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-            <Button size="lg" className="w-auto inline-flex items-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-2 sm:px-4 py-2">
-              <Home className="w-4 h-4" />
-              View Live Demo
+                         <Button asChild size="lg" className="w-auto inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white px-2 sm:px-4 py-2">
+               <a href="#waitlist">
+                 Start Your Property Journey
+                 <ArrowRight className="w-4 h-4" />
+               </a>
+             </Button>
+            <Button asChild size="lg" className="w-auto inline-flex items-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-2 sm:px-4 py-2">
+              <a href="#demo">
+                <Home className="w-4 h-4" />
+                View Live Demo
+              </a>
             </Button>
           </div>
           

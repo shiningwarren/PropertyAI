@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SectionHeading } from "./ui/section-heading";
 
-export function ContactForm() {
+export function WaitlistForm() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -36,7 +36,7 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="waitlist" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <SectionHeading>The Future of UK Property Advice</SectionHeading>
@@ -48,7 +48,7 @@ export function ContactForm() {
 
         {/* ✅ Netlify-enabled form */}
         <form
-          name="contact"
+          name="waitlist"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -56,7 +56,7 @@ export function ContactForm() {
           className="space-y-4 max-w-xl mx-auto"
         >
           {/* Required hidden input for Netlify */}
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="waitlist" />
 
           {/* Hidden honeypot field for spam prevention */}
           <p className="hidden">
@@ -67,13 +67,13 @@ export function ContactForm() {
 
           <div>
             <label
-              htmlFor="contact-name"
+              htmlFor="waitlist-name"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
               Name
             </label>
             <input
-              id="contact-name"
+              id="waitlist-name"
               name="name"
               type="text"
               required
@@ -84,13 +84,13 @@ export function ContactForm() {
 
           <div>
             <label
-              htmlFor="contact-email"
+              htmlFor="waitlist-email"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
               Email
             </label>
             <input
-              id="contact-email"
+              id="waitlist-email"
               name="email"
               type="email"
               required
@@ -118,3 +118,4 @@ export function ContactForm() {
     </section>
   );
 }
+
