@@ -1,5 +1,6 @@
 import { Bot, Mail, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 export function FooterSimple() {
   return (
@@ -79,9 +80,9 @@ export function FooterSimple() {
           </div>
           <div className="text-center md:text-left md:col-span-2">
             <div className="flex gap-2 md:gap-3 justify-center md:justify-end whitespace-nowrap">
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+              <Link to="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/cookies" className="text-sm text-gray-400 hover:text-white transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>
