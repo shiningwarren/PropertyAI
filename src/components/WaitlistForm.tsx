@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SectionHeading } from "./ui/section-heading";
+import { Button } from "./ui/button";
 
 export function WaitlistForm() {
   const [loading, setLoading] = useState(false);
@@ -99,13 +100,14 @@ export function WaitlistForm() {
             />
           </div>
 
-          <button
+          <Button
             type="submit"
+            variant="primary"
             disabled={loading}
-            className="w-full bg-black text-white font-medium py-2 px-4 rounded-md hover:bg-gray-800 transition-colors disabled:opacity-50"
+            className="w-full"
           >
             {loading ? "Submitting..." : "Submit"}
-          </button>
+          </Button>
         </form>
 
         {/* ✅ Show success or error message */}

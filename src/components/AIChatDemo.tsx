@@ -128,7 +128,7 @@ export function AIChatDemo() {
                         className="w-full !bg-gray-100 placeholder:text-gray-500 border-0 rounded-md focus:outline-none"
                       />
                     </div>
-                    <Button type="submit" size="icon" className="bg-black hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:shadow-lg focus-visible:shadow-blue-500/50">
+                    <Button type="submit" size="icon" variant="primary" className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:shadow-lg focus-visible:shadow-blue-500/50">
                       <Send className="w-4 h-4 text-white" />
                     </Button>
                   </form>

@@ -78,8 +78,9 @@ export function Header() {
           {/* Right section: Get Started + Burger */}
           <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0 ml-auto">
             <Button 
+              variant="primary"
               onClick={() => handleNavigation("waitlist")}
-              className="bg-black hover:bg-gray-800 text-white font-medium px-4 py-2 rounded-lg"
+              className="font-medium px-4 py-2 rounded-lg"
             >
               Join Waitlist
             </Button>
