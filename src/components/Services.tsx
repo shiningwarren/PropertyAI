@@ -18,7 +18,7 @@ export function Services() {
       icon: Zap,
       title: "Powering the Next Phase",
       description: "New tools to supercharge your investing.",
-      features: ["Local business network (solicitors, brokers, builders)", "Portfolio optimisation & compliance reminders","Local price, rental yield, and demand trends", "Smart deal sourcing insights and alerts"],
+      features: ["Local business network (solicitors, brokers, builders)","Local price, rental yield, and demand trends", "Smart deal sourcing insights and alerts"],
       popular: false,
       badgeIcon: Rocket,
       badgeText: "Coming Soon"
@@ -46,10 +46,10 @@ export function Services() {
                 </div>
               </div>
               
-              <CardHeader className="text-center pt-8">
-                <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <service.icon className="w-8 h-8 text-gray-700" />
-                </div>
+                             <CardHeader className="text-center pt-8">
+                 <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center mx-auto mb-3">
+                   <service.icon className="w-8 h-8 text-gray-700" />
+                 </div>
                 <CardTitle className="text-lg text-gray-900 -mb-4">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-8">

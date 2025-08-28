@@ -1,4 +1,4 @@
-import { Bot, Mail, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Bot, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Footer() {
@@ -22,9 +22,7 @@ export function Footer() {
                   <Instagram className="w-4 h-4" />
                 </a>
               </Button>
-              <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white">
-                <Linkedin className="w-4 h-4" />
-              </Button>
+
               <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white">
                 <Facebook className="w-4 h-4" />
               </Button>

@@ -102,7 +102,7 @@ export function TermsOfService() {
                   <h2 className="text-xl font-semibold text-gray-900 mb-4">10. Contact Us</h2>
                   <p className="text-gray-700 mb-3">For any questions about these Terms, please contact us:</p>
                   <div className="space-y-2 text-gray-700">
-                    <p>📧 <a href="mailto:hello@propertyai.club" className="text-blue-600 hover:text-blue-800 underline">hello@propertyai.club</a></p>
+                    <p>📧 <a href="mailto:hello@propertyai.club?subject=Terms of Service - General Inquiry" className="text-blue-600 hover:text-blue-800 underline">hello@propertyai.club</a></p>
                     <p>📍 London, UK</p>
                   </div>
                 </div>

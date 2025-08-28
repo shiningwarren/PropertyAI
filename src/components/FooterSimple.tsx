@@ -1,4 +1,4 @@
-import { Bot, Mail, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Bot, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 
@@ -37,13 +37,9 @@ export function FooterSimple() {
                     <Instagram className="w-4 h-4" />
                   </a>
                 </Button>
+
                 <Button asChild variant="ghost" size="icon" className="text-gray-300 hover:text-white">
-                  <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                </Button>
-                <Button asChild variant="ghost" size="icon" className="text-gray-300 hover:text-white">
-                  <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <a href="https://www.facebook.com/propertyai.club" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <Facebook className="w-4 h-4" />
                   </a>
                 </Button>

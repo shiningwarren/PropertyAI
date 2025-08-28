@@ -70,7 +70,7 @@ export function PrivacyPolicy() {
                     <li>Withdraw consent at any time.</li>
                   </ul>
                   <p className="text-gray-700 mt-3">
-                    To exercise these rights, contact us at: <a href="mailto:hello@propertyai.club" className="text-blue-600 hover:text-blue-800 underline">hello@propertyai.club</a>
+                    To exercise these rights, contact us at: <a href="mailto:hello@propertyai.club?subject=Privacy Policy - Data Rights Request" className="text-blue-600 hover:text-blue-800 underline">hello@propertyai.club</a>
                   </p>
                 </div>
 
@@ -106,7 +106,7 @@ export function PrivacyPolicy() {
                   <h2 className="text-xl font-semibold text-gray-900 mb-4">9. Contact Us</h2>
                   <p className="text-gray-700 mb-3">For any questions about this policy or your data rights, please contact us:</p>
                   <div className="space-y-2 text-gray-700">
-                    <p>📧 <a href="mailto:hello@propertyai.club" className="text-blue-600 hover:text-blue-800 underline">hello@propertyai.club</a></p>
+                    <p>📧 <a href="mailto:hello@propertyai.club?subject=Privacy Policy - General Inquiry" className="text-blue-600 hover:text-blue-800 underline">hello@propertyai.club</a></p>
                     <p>📍 London, UK</p>
                   </div>
                 </div>

@@ -12,7 +12,7 @@ export function Hero() {
           }
           .shimmer-effect {
             animation: shimmer 12s linear infinite;
-            background: linear-gradient(90deg, transparent, rgba(219, 234, 254, 0.5), rgba(255, 255, 255, 0.8), rgba(219, 234, 254, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, rgba(205, 227, 254, 0.55), rgba(255, 255, 255, 0.8), rgba(205, 227, 254, 0.55), transparent);
             background-size: 200% 100%;
           }
         `}
