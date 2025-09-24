@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://shiningwarren.github.io/PropertyAI/sitemap.xml 
+Disallow: /404.html
+Sitemap: https://www.propertyai.club/sitemap.xml 
