@@ -2,6 +2,13 @@ import { useState } from "react";
 import { SectionHeading } from "./ui/section-heading";
 import { Button } from "./ui/button";
 
+// TypeScript declaration for gtag_report_conversion
+declare global {
+  interface Window {
+    gtag_report_conversion?: (url?: string) => boolean;
+  }
+}
+
 export function WaitlistForm() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -25,6 +32,11 @@ export function WaitlistForm() {
       if (res.ok) {
         setMessage("✅ Thank you! Your details have been submitted.");
         form.reset();
+        
+        // Track Google Ads conversion
+        if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+          window.gtag_report_conversion();
+        }
       } else {
         setMessage("❌ Something went wrong. Please try again.");
       }
