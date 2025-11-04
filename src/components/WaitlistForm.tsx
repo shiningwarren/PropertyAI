@@ -2,10 +2,11 @@ import { useState } from "react";
 import { SectionHeading } from "./ui/section-heading";
 import { Button } from "./ui/button";
 
-// TypeScript declaration for gtag_report_conversion
+// TypeScript declarations for tracking functions
 declare global {
   interface Window {
     gtag_report_conversion?: (url?: string) => boolean;
+    fbq?: (action: string, event: string, params?: Record<string, any>) => void;
   }
 }
 
@@ -36,6 +37,11 @@ export function WaitlistForm() {
         // Track Google Ads conversion
         if (typeof window !== 'undefined' && window.gtag_report_conversion) {
           window.gtag_report_conversion();
+        }
+        
+        // Track Meta Pixel Lead event
+        if (typeof window !== 'undefined' && window.fbq) {
+          window.fbq('track', 'Lead');
         }
       } else {
         setMessage("❌ Something went wrong. Please try again.");
