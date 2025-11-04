@@ -1,14 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (one loader for Ads + GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17697778880"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
 
-      gtag('config', 'AW-17697778880');
+      // EXACT IDs only:
+      gtag('config', 'AW-17697778880');   // Google Ads Conversion ID
+      gtag('config', 'G-S5M0C94JNG');    // GA4 ID
     </script>
     
     <!-- Event snippet for Sign-up conversion page -->
@@ -34,15 +36,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Your AI-powered guide for UK property—whether you're starting out or scaling up. Get expert insights, deal strategies, and compliance support, all in one." />
     <meta name="keywords" content="UK property, property investment, compliance support, deal analysis, investment strategy, landlord guidance, property development, rent-to-rent, serviced accommodation, BRR strategy, HMO compliance, property flipping, joint ventures, property sourcing, beginner property investor, UK landlords, Section 24 tax, property finance, legal structure, housing law" />
-   
-    <!-- Google tag (gtag.js) - Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5M0C94JNG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-S5M0C94JNG');
-    </script>
    
     <!-- Open Graph for social sharing -->
     <meta property="og:title" content="PropertyAI | UK Property Investment Insights & Deal Strategies" />
