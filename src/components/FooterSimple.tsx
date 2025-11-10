@@ -80,7 +80,7 @@ export function FooterSimple() {
           </div>
           
           {/* Bottom Section */}
-          <div className="border-t border-gray-700 pt-8 grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-8 lg:gap-12 w-full">
+          <div className="pt-8 grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-8 lg:gap-12 w-full">
             <div className="text-center md:text-left md:col-span-4">
               <p className="text-sm text-gray-400">&copy; 2025 PropertyAI. All rights reserved.</p>
             </div>
