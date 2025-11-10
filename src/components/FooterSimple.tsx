@@ -14,16 +14,15 @@ export function FooterSimple() {
           }
         `}
       </style>
-      <footer id="footer" className="bg-black text-white py-16">
-        <div className="w-full px-4 sm:px-8 md:px-20 lg:px-28 md:pr-32 lg:pr-40 flex flex-col items-center md:items-start">
+      <footer id="footer" className="relative overflow-hidden bg-black text-white py-16">
+        <div className="absolute inset-0 bg-black pointer-events-none" aria-hidden="true" />
+        <div className="relative z-10 w-full px-4 sm:px-8 md:px-20 lg:px-28 md:pr-32 lg:pr-40 flex flex-col items-center md:items-start">
           {/* Top Section */}
           <div className="flex flex-col md:grid md:grid-cols-6 gap-6 md:gap-8 lg:gap-12 mb-8 w-full">
             {/* PropertyAI Section */}
             <div className="space-y-4 md:col-span-4">
               <div className="flex items-center gap-2 justify-center md:justify-start">
-                <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-white" />
-                </div>
+                <Bot className="w-6 h-6 text-white" />
                 <span className="text-lg font-semibold">PropertyAI</span>
               </div>
               <div className="flex justify-center md:justify-start">
