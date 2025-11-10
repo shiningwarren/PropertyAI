@@ -22,12 +22,18 @@ export function Hero() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-gray-50 border border-blue-300 text-gray-900 rounded-full px-4 py-2 mb-6 relative overflow-hidden shimmer-effect">
               <Bot className="w-4 h-4 text-gray-700 relative z-10" />
-              <span className="text-sm font-medium text-gray-900 relative z-10">AI-Powered Property Intelligence</span>
+              <span className="text-sm font-medium text-gray-900 relative z-10">AI-Powered Agent</span>
             </div>
             
             <h1 className="mb-8 sm:mb-10 text-4xl lg:text-6xl tracking-tight text-gray-900">
-              Smart Property Strategies<br />
-              with <span className="text-blue-600 mt-4 inline-block">AI Guidance</span>
+            <span
+              className="inline-block bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 text-transparent bg-clip-text"
+              style={{ WebkitTextFillColor: "transparent", textShadow: "0 0 0.5px #3b82f6" }}
+            >
+              Intelligent Property Strategies
+            </span>
+            <br />
+            <span className="text-gray-900 mt-4 inline-block">with AI Guidance</span>
             </h1>
             
             <p className="mb-16 sm:mb-8 text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
