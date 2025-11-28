@@ -57,17 +57,19 @@ export function Hero() {
             
             <div className="mt-32 sm:mt-24">
               <div className="grid grid-cols-3 gap-8 text-center">
-                <div>
-                  <div className="text-2xl font-semibold text-gray-900 mb-2">10K+</div>
-                  <div className="text-sm text-gray-600">Properties Analyzed</div>
+                <div className="relative">
+                  <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">10K+</div>
+                  <div className="text-sm font-medium text-gray-600">User Queries Assisted</div>
+                  <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-200"></div>
+                </div>
+                <div className="relative">
+                  <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">20+</div>
+                  <div className="text-sm font-medium text-gray-600">UK Property Categories</div>
+                  <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-200"></div>
                 </div>
                 <div>
-                  <div className="text-2xl font-semibold text-gray-900 mb-2">95%</div>
-                  <div className="text-sm text-gray-600">Accuracy Rate</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-semibold text-gray-900 mb-2">24/7</div>
-                  <div className="text-sm text-gray-600">AI Availability</div>
+                  <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">24/7</div>
+                  <div className="text-sm font-medium text-gray-600">AI Availability</div>
                 </div>
               </div>
             </div>
