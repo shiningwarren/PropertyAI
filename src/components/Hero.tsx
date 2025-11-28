@@ -17,8 +17,18 @@ export function Hero() {
           }
         `}
       </style>
-      <section className="relative bg-[#F6F6F7] py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-[#F6F6F7] py-20 lg:py-32 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          style={{ zIndex: 0 }}
+        >
+          <source src="https://res.cloudinary.com/dcm0m5nrt/video/upload/v1764350137/particle-wave-bg_hhwdn2.mp4" type="video/mp4" />
+        </video>
+        <div className="container mx-auto px-4 relative" style={{ zIndex: 1 }}>
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-gray-50 border border-blue-300 text-gray-900 rounded-full px-4 py-2 mb-6 relative overflow-hidden shimmer-effect">
               <Bot className="w-4 h-4 text-gray-700 relative z-10" />

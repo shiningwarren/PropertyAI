@@ -58,7 +58,9 @@ export function WaitlistForm() {
     <section id="waitlist" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <SectionHeading>Real Answers for Real UK Property Investors</SectionHeading>
+          <SectionHeading>
+            Real answers for<br className="md:hidden" /> Real UK Property Investors
+          </SectionHeading>
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
             Be the first to experience AI-powered property support that speaks your language –
             register your interest and stay one step ahead.
