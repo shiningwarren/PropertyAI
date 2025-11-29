@@ -27,7 +27,7 @@ export function FooterSimple() {
               </div>
               <div className="flex justify-center md:justify-start">
                 <p className="text-gray-300 text-sm leading-relaxed max-w-[32ch] md:max-w-[40ch] text-center md:text-left footer-copy-mobile">
-                  Empowering smart property decisions with AI‑driven insights and strategies. Your trusted partner in property success.
+                  Empowering intelligent property decisions with AI‑driven insights and guidance. Your trusted partner in property success.
                 </p>
               </div>
               <div className="flex gap-2 justify-center md:justify-start">

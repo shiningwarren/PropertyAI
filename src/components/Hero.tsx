@@ -17,16 +17,16 @@ export function Hero() {
           }
         `}
       </style>
-      <section className="relative bg-[#F6F6F7] py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#FFFFF] py-20 lg:py-32 overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-10"
           style={{ zIndex: 0 }}
         >
-          <source src="https://res.cloudinary.com/dcm0m5nrt/video/upload/v1764350137/particle-wave-bg_hhwdn2.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dcm0m5nrt/video/upload/v1764420000/wave-bg_vsq1pa.mp4" type="video/mp4" />
         </video>
         <div className="container mx-auto px-4 relative" style={{ zIndex: 1 }}>
           <div className="max-w-4xl mx-auto text-center">
@@ -47,7 +47,7 @@ export function Hero() {
             </h1>
             
             <p className="mb-16 sm:mb-8 text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
-              Get instant, personalized property investment strategies and market insights from our advanced AI agent. Make informed decisions with real-time data and expert analysis.
+              Get instant, personalized property investment strategies and guidance from our advanced AI agent. Make informed decisions with real practical advice and expert analysis.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
