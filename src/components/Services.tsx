@@ -27,6 +27,15 @@ export function Services() {
 
   return (
     <section className="py-20 bg-[#F6F6F7]">
+      <svg className="absolute w-0 h-0">
+        <defs>
+          <linearGradient id="service-icon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#2563eb" />
+            <stop offset="50%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#60a5fa" />
+          </linearGradient>
+        </defs>
+      </svg>
       <div className="container mx-auto px-20 lg:px-28">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <SectionHeading>Property Strategy Services</SectionHeading>
@@ -47,7 +56,7 @@ export function Services() {
               </div>
               
                              <CardHeader className="text-center pt-8">
-                 <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center mx-auto mb-3">
+                 <div className="flex items-center justify-center mb-3">
                    <service.icon className="w-8 h-8 text-gray-700" />
                  </div>
                 <CardTitle className="text-lg text-gray-900 -mb-4">{service.title}</CardTitle>
