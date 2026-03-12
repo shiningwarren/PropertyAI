@@ -2,10 +2,9 @@ import { useState } from "react";
 import { SectionHeading } from "./ui/section-heading";
 import { Button } from "./ui/button";
 
-// TypeScript declarations for tracking functions
 declare global {
   interface Window {
-    gtag_report_conversion?: (url?: string) => boolean;
+    dataLayer?: Array<Record<string, any>>;
     fbq?: (action: string, event: string, params?: Record<string, any>) => void;
   }
 }
@@ -14,7 +13,6 @@ export function WaitlistForm() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
-  // ✅ Handle Netlify Forms submission (NO serverless function)
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -24,7 +22,6 @@ export function WaitlistForm() {
     const formData = new FormData(form);
 
     try {
-      // ✅ POST directly to Netlify (root /)
       const res = await fetch("/", {
         method: "POST",
         body: formData,
@@ -33,15 +30,19 @@ export function WaitlistForm() {
       if (res.ok) {
         setMessage("✅ Thank you! Your details have been submitted.");
         form.reset();
-        
-        // Track Google Ads conversion
-        if (typeof window !== 'undefined' && window.gtag_report_conversion) {
-          window.gtag_report_conversion();
+
+        // GTM custom event for successful waitlist signup
+        if (typeof window !== "undefined") {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "waitlist_signup_success",
+            form_name: "waitlist",
+          });
         }
-        
-        // Track Meta Pixel Lead event
-        if (typeof window !== 'undefined' && window.fbq) {
-          window.fbq('track', 'Lead');
+
+        // Meta Pixel Lead event
+        if (typeof window !== "undefined" && window.fbq) {
+          window.fbq("track", "Lead");
         }
       } else {
         setMessage("❌ Something went wrong. Please try again.");
@@ -61,13 +62,13 @@ export function WaitlistForm() {
           <SectionHeading>
             Real answers for<br className="md:hidden" /> Real UK Property Investors
           </SectionHeading>
+
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
             Be the first to experience AI-powered property support that speaks your language –
             register your interest and stay one step ahead.
           </p>
         </div>
 
-        {/* ✅ Netlify-enabled form */}
         <form
           name="waitlist"
           method="POST"
@@ -76,10 +77,8 @@ export function WaitlistForm() {
           onSubmit={handleSubmit}
           className="space-y-4 max-w-xl mx-auto"
         >
-          {/* Required hidden input for Netlify */}
           <input type="hidden" name="form-name" value="waitlist" />
 
-          {/* Hidden honeypot field for spam prevention */}
           <p className="hidden">
             <label>
               Don’t fill this out if you’re human: <input name="bot-field" />
@@ -130,7 +129,6 @@ export function WaitlistForm() {
           </Button>
         </form>
 
-        {/* ✅ Show success or error message */}
         {message && (
           <p className="text-center mt-4 text-lg">
             {message}
@@ -140,4 +138,3 @@ export function WaitlistForm() {
     </section>
   );
 }
-
