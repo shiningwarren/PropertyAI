@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Features } from "./components/Features";
@@ -10,21 +11,37 @@ import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { TermsOfService } from "./components/TermsOfService";
 import { CookiePolicy } from "./components/CookiePolicy";
 
+function ScrollToHash() {
+  const { hash, pathname } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+
+    const id = hash.replace("#", "");
+
+    const scrollToSection = () => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    const timeout = setTimeout(scrollToSection, 150);
+    return () => clearTimeout(timeout);
+  }, [hash, pathname]);
+
+  return null;
+}
+
 function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
         <Hero />
-        <section id="features">
-          <Features />
-        </section>
-        <section id="services">
-          <Services />
-        </section>
-        <section id="demo">
-          <AIChatDemo />
-        </section>
+        <Features />
+        <Services />
+        <AIChatDemo />
         <WaitlistForm />
       </main>
       <FooterSimple />
@@ -35,6 +52,7 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
